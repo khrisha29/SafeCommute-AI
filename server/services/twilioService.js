@@ -103,7 +103,7 @@ async function sendSOSAlert(userName, location, contacts, tripData) {
 
   const results = [];
   for (const contact of contacts) {
-    const res = await sendSMS(contact.phone, body);
+    const res = await sendWhatsApp(contact.phone, body);
     results.push({ name: contact.name, phone: contact.phone, status: res.mode });
   }
   return results;
@@ -124,7 +124,7 @@ async function sendTripStartAlert(userName, originName, destinationName, etaStr,
 
   const results = [];
   for (const contact of contacts) {
-    const res = await sendSMS(contact.phone, body);
+    const res = await sendWhatsApp(contact.phone, body);
     results.push({ name: contact.name, phone: contact.phone, status: res.mode });
   }
   return results;
@@ -138,7 +138,7 @@ async function sendCheckInPrompt(userPhone, destinationName, etaPlusFiveStr) {
     `Please click check-in inside the app or reply SAFE to confirm.\n` +
     `If we do not hear from you by ${etaPlusFiveStr}, your emergency contacts will be alerted.`;
 
-  return await sendSMS(userPhone, body);
+  return await sendWhatsApp(userPhone, body);
 }
 
 /**
@@ -151,7 +151,7 @@ async function sendMissedCheckInAlert(userName, destinationName, contacts) {
 
   const results = [];
   for (const contact of contacts) {
-    const res = await sendSMS(contact.phone, body);
+    const res = await sendWhatsApp(contact.phone, body);
     results.push({ name: contact.name, phone: contact.phone, status: res.mode });
   }
   return results;

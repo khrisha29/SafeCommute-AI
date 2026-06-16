@@ -39,8 +39,8 @@ export default function WomenSafetyToggle({ onChange }) {
       type="button"
       id="women-safety-toggle"
     >
-      {enabled ? <Shield size={16} className="animate-pulse" /> : <ShieldAlert size={16} />}
-      <span className="text-xs font-bold tracking-wide">
+      {enabled ? <Shield size={18} className="animate-pulse" /> : <ShieldAlert size={18} />}
+      <span className="text-sm font-bold tracking-wide">
         {enabled ? 'Women Safety Mode: ON' : 'Women Safety Mode: OFF'}
       </span>
       <span 

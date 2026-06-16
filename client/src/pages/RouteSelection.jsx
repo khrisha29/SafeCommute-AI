@@ -88,14 +88,20 @@ export default function RouteSelection({
       const endCoord = lastRoute.geometry.coordinates[lastRoute.geometry.coordinates.length - 1];
 
       const response = await axios.post('/api/routes/compare', {
+        origin: routesData.originName,
+        destination: routesData.destinationName,
         originCoords: startCoord,
         destinationCoords: endCoord,
         womenSafetyMode: newVal
       });
       
-      // Update routes data in parent state via callback
+      // Update routes data in parent state via callback, preserving location names
       if (onRoutesDataUpdate) {
-        onRoutesDataUpdate(response.data);
+        onRoutesDataUpdate({
+          ...response.data,
+          originName: routesData.originName,
+          destinationName: routesData.destinationName
+        });
       }
       
       // Reset selected route index

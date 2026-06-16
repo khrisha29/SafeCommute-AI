@@ -75,7 +75,7 @@ export default function Signup({ onNavigateToLogin }) {
                 placeholder="Jane Doe"
               />
             </div>
-            <p className="mt-1 ml-1 text-xs text-gray-500 font-medium">Required for SOS WhatsApp alerts</p>
+            <p className="mt-1 ml-1 text-xs text-gray-500 font-medium">Required for SOS SMS alerts</p>
           </div>
 
           <div>

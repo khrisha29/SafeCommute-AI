@@ -317,6 +317,8 @@ router.post('/compare', async (req, res) => {
 
       return res.json({
         routes: sortedRoutes,
+        originName: origin || undefined,
+        destinationName: destination || undefined,
         womenSafetyMode: true,
         bannerMessage: "Safety Mode Active — Prioritizing lit roads, busy streets, and transit corridors",
         timeDeltaMessage: timeDeltaMinutes > 0 ? `Best safe route is ${timeDeltaMinutes} mins longer than fastest` : "Best safe route is also the fastest route!"
@@ -326,6 +328,8 @@ router.post('/compare', async (req, res) => {
       sortedRoutes.sort((a, b) => a.duration - b.duration);
       return res.json({
         routes: sortedRoutes,
+        originName: origin || undefined,
+        destinationName: destination || undefined,
         womenSafetyMode: false
       });
     }

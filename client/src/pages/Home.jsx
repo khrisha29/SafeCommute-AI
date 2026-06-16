@@ -312,11 +312,11 @@ export default function Home({
           {/* Row 1: Brand Logo + User Name & Logout */}
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1.5">
-              <Sparkles className="text-googleBlue animate-pulse" size={16} />
-              <h1 className="text-xs font-black tracking-widest text-gray-800 uppercase">SafeCommute AI</h1>
+              <Sparkles className="text-googleBlue animate-pulse" size={18} />
+              <h1 className="text-sm font-black tracking-widest text-gray-800 uppercase">SafeCommute AI</h1>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-gray-700">
+              <span className="text-sm font-bold text-gray-700">
                 {currentUser?.displayName || currentUser?.name || currentUser?.email?.split('@')[0]}
               </span>
               <button
@@ -324,7 +324,7 @@ export default function Home({
                 className="flex items-center justify-center p-1.5 rounded-lg text-gray-400 hover:text-dangerRed hover:bg-red-50 transition-colors cursor-pointer"
                 title="Sign Out"
               >
-                <LogOut size={15} />
+                <LogOut size={17} />
               </button>
             </div>
           </div>
@@ -332,10 +332,10 @@ export default function Home({
           {/* Row 2: Contacts button just below */}
           <button
             onClick={() => setShowContacts(true)}
-            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-googleBlue/10 hover:bg-googleBlue/20 text-googleBlue text-xs font-bold transition-all duration-300 cursor-pointer border border-googleBlue/20"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-googleBlue/10 hover:bg-googleBlue/20 text-googleBlue text-sm font-bold transition-all duration-300 cursor-pointer border border-googleBlue/20"
             title="Manage Emergency Contacts"
           >
-            <ShieldCheck size={14} />
+            <ShieldCheck size={16} />
             Manage Emergency Contacts
           </button>
         </div>
@@ -351,7 +351,7 @@ export default function Home({
             {/* Origin Search */}
             <div className="relative">
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-gray-500">
-                <MapPin size={16} />
+                <MapPin size={18} />
               </div>
               <input
                 type="text"
@@ -359,7 +359,7 @@ export default function Home({
                 value={origin}
                 placeholder="Search Starting point..."
                 onChange={(e) => handleQueryChange(e.target.value, setOrigin, setOriginCoords, setOriginSuggestions)}
-                className="w-full bg-white text-xs text-gray-900 pl-10 pr-10 py-3.5 rounded-xl border border-gray-300 focus:border-googleBlue focus:ring-1 focus:ring-googleBlue focus:outline-none placeholder-gray-400 font-semibold shadow-sm"
+                className="w-full bg-white text-sm text-gray-900 pl-10 pr-10 py-3.5 rounded-xl border border-gray-300 focus:border-googleBlue focus:ring-1 focus:ring-googleBlue focus:outline-none placeholder-gray-400 font-semibold shadow-sm"
               />
               {/* Live Location Pickup Button */}
               <button 
@@ -376,7 +376,7 @@ export default function Home({
                 className="absolute inset-y-0 right-3 flex items-center text-googleBlue hover:text-blue-700 cursor-pointer"
                 title="Use current location"
               >
-                <Navigation size={16} className="transform -rotate-45" />
+                <Navigation size={18} className="transform -rotate-45" />
               </button>
               {originSuggestions.length > 0 && (
                 <div className="absolute left-0 right-0 bottom-full mb-1 bg-white border border-gray-200 rounded-xl shadow-lg z-30 max-h-48 overflow-y-auto">
@@ -388,9 +388,9 @@ export default function Home({
                         setOriginCoords(loc.coords);
                         setOriginSuggestions([]);
                       }}
-                      className="w-full p-3 text-left text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 flex items-center gap-2"
+                      className="w-full p-3 text-left text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 flex items-center gap-2"
                     >
-                      <MapPin size={12} className="text-gray-400" /> {loc.name}
+                      <MapPin size={14} className="text-gray-400" /> {loc.name}
                     </button>
                   ))}
                 </div>
@@ -400,7 +400,7 @@ export default function Home({
             {/* Destination Search */}
             <div className="relative">
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-gray-500">
-                <Search size={16} />
+                <Search size={18} />
               </div>
               <input
                 type="text"
@@ -408,7 +408,7 @@ export default function Home({
                 value={destination}
                 placeholder="Search Destination..."
                 onChange={(e) => handleQueryChange(e.target.value, setDestination, setDestinationCoords, setDestSuggestions)}
-                className="w-full bg-white text-xs text-gray-900 pl-10 pr-4 py-3.5 rounded-xl border border-gray-300 focus:border-googleBlue focus:ring-1 focus:ring-googleBlue focus:outline-none placeholder-gray-400 font-semibold shadow-sm"
+                className="w-full bg-white text-sm text-gray-900 pl-10 pr-4 py-3.5 rounded-xl border border-gray-300 focus:border-googleBlue focus:ring-1 focus:ring-googleBlue focus:outline-none placeholder-gray-400 font-semibold shadow-sm"
               />
               {destSuggestions.length > 0 && (
                 <div className="absolute left-0 right-0 bottom-full mb-1 bg-white border border-gray-200 rounded-xl shadow-lg z-30 max-h-48 overflow-y-auto">
@@ -420,9 +420,9 @@ export default function Home({
                         setDestinationCoords(loc.coords);
                         setDestSuggestions([]);
                       }}
-                      className="w-full p-3 text-left text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 flex items-center gap-2"
+                      className="w-full p-3 text-left text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100 last:border-b-0 flex items-center gap-2"
                     >
-                      <MapPin size={12} className="text-gray-400" /> {loc.name}
+                      <MapPin size={14} className="text-gray-400" /> {loc.name}
                     </button>
                   ))}
                 </div>
@@ -437,7 +437,7 @@ export default function Home({
             <button
               onClick={handleSearchRoutes}
               disabled={loading || !destinationCoords}
-              className="flex-1 py-3.5 bg-googleBlue hover:bg-blue-600 text-white rounded-xl text-xs font-extrabold tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex-1 py-3.5 bg-googleBlue hover:bg-blue-600 text-white rounded-xl text-sm font-extrabold tracking-wider transition-all shadow-md flex items-center justify-center gap-1.5 disabled:opacity-50 disabled:cursor-not-allowed"
               style={{ minHeight: '44px' }}
               id="find-routes-button"
             >

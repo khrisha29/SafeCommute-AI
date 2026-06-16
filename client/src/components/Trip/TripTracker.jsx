@@ -65,11 +65,11 @@ export default function TripTracker({
   return (
     <div className="space-y-4">
       {/* 1. Active Navigation Card */}
-      <div className="bg-white p-4 rounded-xl border border-gray-200 flex flex-col space-y-4 shadow-sm">
-        <div className="flex justify-between items-center pb-3 border-b border-gray-100">
+      <div className="bg-white p-5 rounded-xl border border-gray-200 flex flex-col space-y-5 shadow-sm">
+        <div className="flex justify-between items-center pb-4 border-b border-gray-100">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-safeGreen animate-ping" />
-            <span className="text-xs font-black tracking-wider text-safeGreen uppercase">Active Safe Trip</span>
+            <span className="w-3 h-3 rounded-full bg-safeGreen animate-ping" />
+            <span className="text-sm font-black tracking-wider text-safeGreen uppercase">Active Safe Trip</span>
           </div>
           
           <div className="flex gap-2">
@@ -78,39 +78,39 @@ export default function TripTracker({
                 handleCopyLink();
                 setShowShare(!showShare);
               }}
-              className="px-3 py-1.5 bg-gray-50 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-lg flex items-center gap-1 border border-gray-200"
-              style={{ minHeight: '32px' }}
+              className="px-4 py-2 bg-gray-50 hover:bg-gray-200 text-gray-700 text-sm font-bold rounded-lg flex items-center gap-1.5 border border-gray-200"
+              style={{ minHeight: '36px' }}
             >
-              <Share2 size={13} />
+              <Share2 size={15} />
               Share Link
             </button>
             
             <button
               onClick={handleEndTrip}
-              className="px-3 py-1.5 bg-dangerRed hover:bg-dangerRed/90 text-white text-xs font-bold rounded-lg flex items-center gap-1"
-              style={{ minHeight: '32px' }}
+              className="px-4 py-2 bg-dangerRed hover:bg-dangerRed/90 text-white text-sm font-bold rounded-lg flex items-center gap-1.5"
+              style={{ minHeight: '36px' }}
             >
-              <StopCircle size={13} />
+              <StopCircle size={15} />
               End Trip
             </button>
           </div>
         </div>
 
         {/* Origin / Destination flow */}
-        <div className="space-y-2.5 text-xs font-semibold">
-          <div className="flex items-start gap-2 text-gray-400">
-            <span className="w-4 h-4 rounded-full bg-gray-700 flex items-center justify-center text-[10px] text-white shrink-0 mt-0.5">A</span>
+        <div className="space-y-3 font-semibold">
+          <div className="flex items-start gap-3 text-gray-400">
+            <span className="w-5 h-5 rounded-full bg-gray-700 flex items-center justify-center text-[11px] text-white shrink-0 mt-0.5">A</span>
             <div>
-              <span className="text-[10px] text-gray-500 font-extrabold uppercase block">Starting From</span>
-              <span className="text-gray-800 font-bold">{trip.origin_name}</span>
+              <span className="text-xs text-gray-500 font-extrabold uppercase block">Starting From</span>
+              <span className="text-sm text-gray-800 font-bold">{trip.origin_name || 'Current Location'}</span>
             </div>
           </div>
-          <div className="h-4 border-l border-dashed border-darkBorder ml-2" />
-          <div className="flex items-start gap-2 text-gray-300">
-            <span className="w-4 h-4 rounded-full bg-safeGreen flex items-center justify-center text-[10px] text-white shrink-0 mt-0.5">B</span>
+          <div className="h-6 border-l border-dashed border-darkBorder ml-2.5" />
+          <div className="flex items-start gap-3 text-gray-300">
+            <span className="w-5 h-5 rounded-full bg-safeGreen flex items-center justify-center text-[11px] text-white shrink-0 mt-0.5">B</span>
             <div>
-              <span className="text-[10px] text-gray-500 font-extrabold uppercase block">Destination</span>
-              <span className="text-gray-900 font-bold">{trip.destination_name}</span>
+              <span className="text-xs text-gray-500 font-extrabold uppercase block">Destination</span>
+              <span className="text-sm text-gray-900 font-bold">{trip.destination_name || 'Selected Destination'}</span>
             </div>
           </div>
         </div>

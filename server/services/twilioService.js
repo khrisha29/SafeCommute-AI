@@ -103,7 +103,7 @@ async function sendSOSAlert(userName, location, contacts, tripData) {
 
   const results = [];
   for (const contact of contacts) {
-    const res = await sendWhatsApp(contact.phone, body);
+    const res = await sendSMS(contact.phone, body);
     results.push({ name: contact.name, phone: contact.phone, status: res.mode });
   }
   return results;

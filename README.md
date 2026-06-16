@@ -2,6 +2,7 @@
 
 SafeCommute AI is a next-generation smart route planner and safety navigator designed to prioritize commuter safety. It evaluates and recommends routes based on street illumination (lit/unlit roads), crowdsourced incident density, transit corridor coverage, and real-time risk predictions using artificial intelligence.
 
+Try it out: https://safe-commute-ai-ashy.vercel.app/
 ---
 
 ## 🌟 Key Features

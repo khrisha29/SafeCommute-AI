@@ -10,7 +10,11 @@ SafeCommute AI is a next-generation smart route planner and safety navigator des
 - **Women Safety Mode:** Re-ranks routes dynamically to heavily prioritize well-lit commercial streets, busy transit corridors, and areas with high pedestrian presence.
 - **Dynamic Live Transit:** Integrates real-world buses, metro, and train stations near your active location dynamically via the Mapbox Geocoding POI API.
 - **Crowdsourced Incident Reporting:** Share real-time hazards (harassment, poorly lit areas, broken streetlights) immediately with other commuters via Socket.io.
-- **Live SOS Tracking:** Share your active commute session with trusted contacts via unique live-tracking web links.
+- **Emergency Contacts Manager:**  users can add, view and remove their own custom emergency contacts saved to their account
+- **Smart Check-in System:**  if user doesn't confirm arrival within 5 minutes of ETA, automated alert fires to emergency contacts
+- **WhatsApp SOS Alert:** one-tap SOS sends real WhatsApp message with live location + Google Maps link + timestamp to saved emergency contacts
+- **AI Risk Prediction:** plain English risk note generated for the route ("Low foot traffic after 10 PM on this stretch — metro is safer")
+- **User Authentication:** individual accounts via Firebase so each user's contacts and preferences are saved and persistent across sessions
 
 ---
 
@@ -19,7 +23,7 @@ SafeCommute AI is a next-generation smart route planner and safety navigator des
 - **Frontend:** React, Vite, Mapbox GL JS, TailwindCSS, Lucide Icons, Socket.io-client.
 - **Backend:** Node.js, Express.js, MongoDB (Mongoose), Socket.io.
 - **AI Integrations:** NVIDIA NIM (Claude/OpenAI compatible SDK) for predictive risk analysis.
-
+- **Notifications & Alerts:** Twilio WhatsApp Sandbox API, Twilio SMS API
 ---
 
 ## 🚀 Getting Started

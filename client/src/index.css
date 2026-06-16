@@ -1,0 +1,158 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply bg-darkBg text-gray-900 font-sans antialiased overflow-x-hidden;
+    background-color: #F8F9FA;
+  }
+}
+
+/* Custom CSS Helpers */
+
+/* Hide scrollbars for chrome/safari */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Glassmorphism styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 234, 237, 0.8);
+}
+
+/* Pulsing current location dot */
+.location-pulse-dot {
+  width: 14px;
+  height: 14px;
+  background-color: #1A73E8;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 8px rgba(26, 115, 232, 0.5);
+}
+
+.location-pulse-dot::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border: 2px solid #1A73E8;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  animation: location-pulse 2s infinite ease-out;
+  opacity: 0;
+}
+
+@keyframes location-pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Pulsing radar for live SOS alert and active tracking state */
+.sos-radar-ring {
+  position: relative;
+}
+
+.sos-radar-ring::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 4px solid #ef4444;
+  animation: sos-radar-pulse 1.8s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+  opacity: 0;
+}
+
+@keyframes sos-radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* Mapbox GL Override */
+.mapboxgl-popup-content {
+  background: #FFFFFF !important;
+  color: #202124 !important;
+  border: 1px solid #E8EAED !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  font-family: 'Inter', sans-serif !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: #FFFFFF !important;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: #FFFFFF !important;
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: #FFFFFF !important;
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: #FFFFFF !important;
+}
+.mapboxgl-ctrl-attrib {
+  display: none !important;
+}
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+
+/* Smooth layout transitions */
+.page-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fluid blob animations for Auth */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Auth inputs soft glow */
+.input-glow:focus {
+  box-shadow: 0 0 15px rgba(174, 203, 235, 0.5); /* Sky blue glow */
+  border-color: #AECBEB;
+}

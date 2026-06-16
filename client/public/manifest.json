@@ -1,0 +1,16 @@
+{
+  "short_name": "SafeCommute",
+  "name": "SafeCommute AI - Indian Urban Safety Routing",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0D1117",
+  "theme_color": "#1D9E75",
+  "display": "standalone",
+  "orientation": "portrait"
+}

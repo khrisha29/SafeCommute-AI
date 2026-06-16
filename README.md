@@ -31,7 +31,7 @@ If you want to contribute, test, or run the project locally, follow these steps 
 First, fork this repository to your own GitHub account. Then, clone the fork to your local machine:
 
 ```bash
-git clone https://github.com/Krish30p/SafeCommute-AI.git
+git clone https://github.com/khrisha29/SafeCommute-AI.git
 cd SafeCommute-AI
 ```
 
